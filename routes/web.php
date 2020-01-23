@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('customers', 'CustomerController');
+
 Route::prefix('customer')->group(function () {
     Route::get('index', 'CustomerController@index');
 
@@ -30,3 +32,5 @@ Route::prefix('customer')->group(function () {
 
     Route::delete('{id}', 'CustomerController@delete');
 });
+
+Route::resource('tasks', 'TaskController');
